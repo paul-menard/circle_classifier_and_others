@@ -10,7 +10,7 @@ print(X, "\n")
 print(y)
 
 X = torch.tensor(X, dtype=torch.float32)
-y = torch.tensor(y)
+y = torch.tensor(y, dtype=torch.float32)
 
 print(X, y)
 
@@ -46,7 +46,7 @@ for epoch in range(1000):
     lost = loss(y_hat, y_train)
     
     optimiser.zero_grad()
-    loss.backward()
+    lost.backward()
 
     optimiser.step()
 
